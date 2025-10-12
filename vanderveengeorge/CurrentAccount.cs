@@ -5,11 +5,11 @@ class CurrentAccount(string number, double balance, double creditLine, Person ow
     public double CreditLine { get; set; } = creditLine;
     public Person Owner { get; set; } = owner;
 
-    void Withdraw(double amount)
+    public void Withdraw(double amount)
     {
 
     }
-    void Deposit(double amount)
+    public void Deposit(double amount)
     {
 
     }
