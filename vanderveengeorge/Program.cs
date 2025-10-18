@@ -3,7 +3,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Création d'une instance de la classe Person
+        // TESTS
         Person person1 = new Person("Alice", "Dupont", new DateTime(1990, 5, 21));
         Person person2 = new Person("Pierre", "Tique", new DateTime(1990, 5, 21));
         Account compte1 = new CurrentAccount("BE1234-4323-4323-3424", 4553, 423, person1);
