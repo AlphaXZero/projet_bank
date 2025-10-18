@@ -1,8 +1,8 @@
-class Bank(Dictionary<string, CurrentAccount> accounts, string name)
+class Bank(Dictionary<string, Account> accounts, string name)
 {
-    public Dictionary<string, CurrentAccount> Accounts { get; } = accounts;
+    public Dictionary<string, Account> Accounts { get; } = accounts;
     public string Name { get; set; } = name;
-    public void AddAccount(CurrentAccount account)
+    public void AddAccount(Account account)
     {
         if (Accounts.ContainsKey(account.Number))
         {
@@ -39,7 +39,7 @@ class Bank(Dictionary<string, CurrentAccount> accounts, string name)
     {
         double totalBalance = 0;
         bool hasAccount = false;
-        foreach (CurrentAccount account in Accounts.Values)
+        foreach (Account account in Accounts.Values)
         {
             if (user == account.Owner)
             {
