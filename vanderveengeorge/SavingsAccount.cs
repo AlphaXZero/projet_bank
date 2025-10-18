@@ -5,6 +5,9 @@ class SavingsAccount(string number, double balance, DateTime dateLastWithdraw, P
     {
         base.Withdraw(amount);
         DateLastWithdraw = DateTime.Now;
-
+    }
+    protected override double CalculateInterest()
+    {
+        return Balance * 1.045;
     }
 }

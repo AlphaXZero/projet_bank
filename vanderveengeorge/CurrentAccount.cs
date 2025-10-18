@@ -12,5 +12,8 @@ class CurrentAccount(string number, double balance, double creditLine, Person ow
             base.Withdraw(amount);
         }
     }
-
+    protected override double CalculateInterest()
+    {
+        return Balance * Balance >= 0 ? 1.035 : 1.0975;
+    }
 }

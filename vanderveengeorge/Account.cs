@@ -1,4 +1,4 @@
-class Account(string number, double balance, Person owner)
+abstract class Account(string number, double balance, Person owner)
 {
     public string Number { get; set; } = number;
     public double Balance { get; private set; } = balance;
@@ -11,4 +11,5 @@ class Account(string number, double balance, Person owner)
     {
         Balance -= amount;
     }
+    protected abstract double CalculateInterest();
 }
