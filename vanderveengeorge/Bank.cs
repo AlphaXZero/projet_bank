@@ -1,8 +1,8 @@
-class Bank(Dictionary<string, Account> accounts, string name)
+class Bank(Dictionary<string, IBankAccount> accounts, string name)
 {
-    public Dictionary<string, Account> Accounts { get; } = accounts;
+    public Dictionary<string, IBankAccount> Accounts { get; } = accounts;
     public string Name { get; set; } = name;
-    public void AddAccount(Account account)
+    public void AddAccount(IBankAccount account)
     {
         if (Accounts.ContainsKey(account.Number))
         {
