@@ -20,13 +20,13 @@ abstract class Account : IBankAccount
     }
     public virtual void Withdraw(double amount)
     {
-        if (amount <= Balance)
+        if (amount > 0)
         {
             Balance -= amount;
         }
         else
         {
-            throw new InsufficientBalanceException("Solde insufisant !");
+            throw new InsufficientBalanceException("Pas de retraits négatifs");
         }
     }
     protected abstract double CalculateInterest();
@@ -34,6 +34,7 @@ abstract class Account : IBankAccount
     {
         Balance += CalculateInterest();
     }
-    public delegate void NegativeBalanceDelegate(IAccount accountToCheck);
+    public delegate void NegativeBalanceDelegate(IBankAccount accountToCheck);
     public event NegativeBalanceDelegate? NegativeBalanceEvent;
+    protected virtual void OnNegativeBalance() => NegativeBalanceEvent?.Invoke(this);
 }

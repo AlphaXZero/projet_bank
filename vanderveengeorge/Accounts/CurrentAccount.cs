@@ -17,14 +17,18 @@ class CurrentAccount : Account
     }
     public override void Withdraw(double amount)
     {
-        if (amount > Balance + CreditLine)
+        if (amount > (Balance + CreditLine))
         {
-
-            Console.WriteLine("Solde insufisant");
+            Console.WriteLine("Solde insufisante");
         }
         else
         {
             base.Withdraw(amount);
+            if (Balance < 0)
+            {
+                OnNegativeBalance();
+            }
+
         }
     }
     protected override double CalculateInterest()
