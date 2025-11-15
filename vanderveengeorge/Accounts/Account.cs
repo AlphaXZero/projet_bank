@@ -34,4 +34,6 @@ abstract class Account : IBankAccount
     {
         Balance += CalculateInterest();
     }
+    public delegate void NegativeBalanceDelegate(IAccount accountToCheck);
+    public event NegativeBalanceDelegate? NegativeBalanceEvent;
 }
